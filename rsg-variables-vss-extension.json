@@ -27,6 +27,9 @@
             "path": "tasks/DeserializeVariables"
         },
         {
+            "path": "tasks/ShowVariables"
+        },
+        {
             "path": "tasks/SerializeVariables"
         }
     ],
@@ -61,6 +64,14 @@
             "targets": ["ms.vss-distributed-task.tasks"],
             "properties": {
                 "name": "tasks/DeserializeVariables"
+            }
+        },
+        {
+            "id": "ShowVariables",
+            "type": "ms.vss-distributed-task.task",
+            "targets": ["ms.vss-distributed-task.tasks"],
+            "properties": {
+                "name": "tasks/ShowVariables"
             }
         },
         {
