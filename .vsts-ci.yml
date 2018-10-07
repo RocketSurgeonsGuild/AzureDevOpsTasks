@@ -1,0 +1,58 @@
+phases:
+  - phase: Build
+    variables:
+      CI: 'true'
+      Configuration: Release
+      Verbosity: Normal
+      Coverage: '$(Agent.BuildDirectory)/c'
+      VstsCoverage: '$(Coverage)'
+      Artifacts: $(Build.ArtifactStagingDirectory)
+      VstsArtifacts: '$(Artifacts)'
+      system.enableAccessToken: 'true'
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 'true'
+      NuGetVersion: "4.6.2"
+      NodeVersion: "10.x"
+      ConnectedServiceName: 'RocketSurgeonsGuild Marketplace'
+      VstsAccountId: 'rocketsurgeonsguild'
+    steps:
+    - task: NuGetToolInstaller@0
+      displayName: Install nuget $(NuGetVersion)
+      inputs:
+        versionSpec: $(NuGetVersion)
+
+    - task: NodeTool@0
+      displayName: Install node $(NodeVersion)
+      inputs:
+        versionSpec: $(NodeVersion)
+
+    - task: cake-build.cake.cake-build-task.Cake@0
+      inputs:
+        message: build
+        script: "cakefile.cake"
+        verbosity: $(Verbosity)
+        arguments: '-Configuration="$(Configuration)" -Artifacts="$(Artifacts)" -Coverage="$(Coverage)"'
+      env:
+        System_AccessToken: $(System.AccessToken)
+
+    - task: ms-devlabs.vsts-developer-tools-build-tasks.publish-extension-build-task.PublishExtension@1
+      displayName: Publish Extension
+      inputs:
+        extensionVersion: '$(GitVersion.Major).$(GitVersion.Minor).$(GitVersion.CommitsSinceVersionSource)'
+        connectedServiceName: '$(ConnectedServiceName)'
+        shareWith: '$(VstsAccountId)'
+        updateTasksVersion: true
+        extensionVisibility: private
+        extensionPricing: free
+      condition: and(succeeded(), variables['GitVersion.CommitsSinceVersionSource'])
+
+    - task: ms-devlabs.vsts-developer-tools-build-tasks.publish-extension-build-task.PublishExtension@1
+      displayName: Publish Extension
+      inputs:
+        extensionVersion: '$(GitVersion.MajorMinorPatch)'
+        connectedServiceName: '$(ConnectedServiceName)'
+        shareWith: '$(VstsAccountId)'
+        updateTasksVersion: true
+        extensionVisibility: private
+        extensionPricing: free
+      condition: and(succeeded(), not(variables['GitVersion.CommitsSinceVersionSource']))
+

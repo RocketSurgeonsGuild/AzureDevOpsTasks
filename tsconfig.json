@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "lib": ["es2017", "esnext"],
+        "strict": true,
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "sourceMap": true,
+        "baseUrl": ".",
+        "esModuleInterop": true,
+        "types": ["node", "jest"]
+    },
+    "exclude": ["node_modules"]
+}

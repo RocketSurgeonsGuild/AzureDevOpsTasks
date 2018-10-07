@@ -1,0 +1,51 @@
+{
+    "manifestVersion": 1,
+    "id": "build-tools",
+    "name": "Rocket Surgeons Guild - Variable Tools",
+    "version": "0.0.1",
+    "publisher": "RocketSurgeonsGuild",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "description": "Helpers for serializing and deserializing variables between build, jobs, and releases.",
+    "categories": ["Build and release"],
+    "files": [
+        {
+            "path": "tasks/UniqueString"
+        },
+        {
+            "path": "tasks/DeserializeVariables"
+        },
+        {
+            "path": "tasks/SerializeVariables"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "UniqueString",
+            "type": "ms.vss-distributed-task.task",
+            "targets": ["ms.vss-distributed-task.tasks"],
+            "properties": {
+                "name": "tasks/UniqueString"
+            }
+        },
+        {
+            "id": "DeserializeVariables",
+            "type": "ms.vss-distributed-task.task",
+            "targets": ["ms.vss-distributed-task.tasks"],
+            "properties": {
+                "name": "tasks/DeserializeVariables"
+            }
+        },
+        {
+            "id": "SerializeVariables",
+            "type": "ms.vss-distributed-task.task",
+            "targets": ["ms.vss-distributed-task.tasks"],
+            "properties": {
+                "name": "tasks/SerializeVariables"
+            }
+        }
+    ]
+}
