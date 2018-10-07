@@ -1,4 +1,4 @@
-import { padStart } from 'lodash';
+import { padStart, orderBy, padEnd } from 'lodash';
 import { getVariable, getVariables } from 'vsts-task-lib/task';
 import { Task } from './util/Task';
 import { VariableHelper } from './util/VariableHelper';
@@ -8,8 +8,8 @@ class ShowVariables extends Task {
         const variables = getVariables();
         const maxSize = variables.reduce((acc, x) => (x.name.length > acc ? acc : x.name.length), 0) + 2;
         console.log('========== Variables ==========');
-        variables.forEach(({ name, value }) => {
-            console.log(`${padStart(name, maxSize, ' ')}: ${value}`);
+        orderBy(variables, x => x.name).forEach(({ name, value }) => {
+            console.log(`${padEnd(name, maxSize, ' ')}: ${value}`);
         });
     }
 }
