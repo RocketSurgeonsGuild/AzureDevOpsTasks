@@ -1,6 +1,6 @@
 {
     "manifestVersion": 1,
-    "id": "build-tools",
+    "id": "variable-tools",
     "name": "Rocket Surgeons Guild - Variable Tools",
     "version": "0.0.1",
     "publisher": "RocketSurgeonsGuild",
@@ -11,6 +11,9 @@
     ],
     "description": "Helpers for serializing and deserializing variables between build, jobs, and releases.",
     "categories": ["Build and release"],
+    "icons": {
+        "default": "icons/ado-variables-build-tasks.png"
+    },
     "files": [
         {
             "path": "tasks/UniqueString"
