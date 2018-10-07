@@ -208,3 +208,4 @@ project.lock.json
 *.js.map
 override.json
 *.vsix
+.taskkey

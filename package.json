@@ -4,6 +4,7 @@
         "prettier": "prettier --write tasks/**/*.ts **/*.json",
         "postinstall": "lerna bootstrap --loglevel silent",
         "test": "jest --ci",
+        "tfx": "tfx",
         "build": "tsc -p ."
     },
     "devDependencies": {

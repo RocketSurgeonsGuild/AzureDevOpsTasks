@@ -52,7 +52,8 @@ Task("Publish")
         System.IO.File.WriteAllText("override.json", "{ \"version\": \"" + version + "\" }");
         foreach (var item in GetFiles("*vss-extension.json"))
         {
-            StartProcess("npx", $"tfx extension create --manifest-globs {item.GetFilename()} --overrides-file override.json");
+            NpmRunScript("tfx", new [] { $"extension create --manifest-globs {item.GetFilename()} --overrides-file override.json" });
+            // StartProcess("npx", $"tfx extension create --manifest-globs {item.GetFilename()} --overrides-file override.json");
         }
         // foreach (var vsix in GetFiles("*.vsix"))
         // {

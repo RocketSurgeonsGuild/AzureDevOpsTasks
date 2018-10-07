@@ -11,7 +11,7 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 104
+        "Patch": 0
     },
     "instanceNameFormat": "Serialize Variables: $(prefixes)",
     "groups": [
