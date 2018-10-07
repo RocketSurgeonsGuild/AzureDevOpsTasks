@@ -6,6 +6,7 @@ const tmr = new TaskMockRunner(tp);
 
 tmr.setInput('value', 'abcd');
 tmr.setInput('name', 'HelloWorld');
+tmr.setInput('seed', '1337');
 tmr.setAnswers({});
 
 tmr.run();
