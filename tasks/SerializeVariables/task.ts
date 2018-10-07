@@ -1,5 +1,4 @@
 import { dirname } from 'path';
-import { bindNodeCallback } from 'rxjs';
 import { getPathInput, mkdirP, writeFile } from 'vsts-task-lib';
 import { command, getBoolInput, getInput, getVariable, getVariables } from 'vsts-task-lib/task';
 import { Task } from './util/Task';
@@ -19,7 +18,10 @@ class SerializeVariables extends Task {
         const metaFilePath = filenameValue.replace(/\{prefixes\}/gi, prefixValue.split(',').join('-'));
         const metaPath = dirname(metaFilePath);
 
+        console.log(`Creating directories for ${metaPath}`);
         mkdirP(metaPath);
+
+        console.log(`Writing metadata out to ${metaFilePath}`);
         writeFile(metaFilePath, JSON.stringify(variables));
 
         if (publishArtifact) {
