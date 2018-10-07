@@ -11,7 +11,7 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 5
+        "Patch": 6
     },
     "instanceNameFormat": "Serialize Variables: $(prefixes)",
     "groups": [
@@ -25,7 +25,7 @@
         {
             "name": "filename",
             "type": "string",
-            "label": "FileName",
+            "label": "Filename",
             "defaultValue": "meta.json",
             "required": true,
             "groupName": "advanced",
@@ -34,7 +34,7 @@
         {
             "name": "artifactName",
             "type": "string",
-            "label": "FileName",
+            "label": "Artifact Name",
             "defaultValue": "variables-{prefixes}",
             "required": true,
             "groupName": "advanced",
