@@ -16,7 +16,7 @@ class SerializeVariables extends Task {
             .filter(x => prefixes.some(prefix => x.name.toLowerCase().startsWith(prefix)));
 
         const artifactDirectory = this.variable.getVariable('Build.ArtifactStagingDirectory');
-        const folder = artifactName.replace(/\{prefixes\}/ig, prefixValue.split(',').join('-'));
+        const folder = artifactName.replace(/\{prefixes\}/gi, prefixValue.split(',').join('-'));
         const metaPath = join(artifactDirectory, folder);
         const metaFilePath = join(metaPath, filenameValue);
 

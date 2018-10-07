@@ -7,11 +7,12 @@
     "helpMarkDown": "",
     "category": "Utility",
     "visibility": ["Build"],
+    "author": "Rocket Surgeons Guild",
     "author": "David Driscoll",
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 2
+        "Patch": 4
     },
     "instanceNameFormat": "Serialize Variables: $(prefixes)",
     "groups": [
