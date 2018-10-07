@@ -37,6 +37,15 @@
             "defaultValue": "",
             "required": true,
             "helpMarkDown": "The value to create the unique string for"
+        },
+        {
+            "name": "seed",
+            "type": "string",
+            "label": "Seed",
+            "defaultValue": "1337",
+            "required": true,
+            "groupName": "advanced",
+            "helpMarkDown": "The random seed used to generate consistent string values"
         }
     ],
     "execution": {

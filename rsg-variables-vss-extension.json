@@ -10,9 +10,14 @@
         }
     ],
     "description": "Helpers for serializing and deserializing variables between build, jobs, and releases.",
-    "categories": ["Build and release"],
+    "categories": ["Pipelines"],
     "icons": {
         "default": "icons/ado-variables-build-tasks.png"
+    },
+    "content": {
+        "details": {
+            "path": "rsg-variables-overview.md"
+        }
     },
     "files": [
         {
@@ -25,6 +30,22 @@
             "path": "tasks/SerializeVariables"
         }
     ],
+    "links": {
+        "license": {
+            "uri": "https://github.com/RocketSurgeonsGuild/AzureDevOpsTasks/blob/master/LICENSE"
+        },
+        "support": {
+            "uri": "https://github.com/RocketSurgeonsGuild/AzureDevOpsTasks/issues"
+        }
+    },
+    "branding": {
+        "color": "#053247",
+        "theme": "dark"
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/RocketSurgeonsGuild/AzureDevOpsTasks"
+    },
     "contributions": [
         {
             "id": "UniqueString",

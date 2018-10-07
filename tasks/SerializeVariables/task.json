@@ -23,6 +23,24 @@
     ],
     "inputs": [
         {
+            "name": "filename",
+            "type": "string",
+            "label": "FileName",
+            "defaultValue": "meta.json",
+            "required": true,
+            "groupName": "advanced",
+            "helpMarkDown": "The artifact filename"
+        },
+        {
+            "name": "artifactName",
+            "type": "string",
+            "label": "FileName",
+            "defaultValue": "variables-{prefixes}",
+            "required": true,
+            "groupName": "advanced",
+            "helpMarkDown": "The artifact name. Use `{prefixes}` to be replaced with the prefixes that are being serialized"
+        },
+        {
             "name": "prefixes",
             "type": "string",
             "label": "Prefixes",
