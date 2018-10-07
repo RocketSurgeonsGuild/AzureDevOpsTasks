@@ -11,7 +11,7 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 6
+        "Patch": 8
     },
     "instanceNameFormat": "Serialize Variables: $(prefixes)",
     "groups": [
@@ -24,12 +24,21 @@
     "inputs": [
         {
             "name": "filename",
-            "type": "string",
+            "type": "filePath",
             "label": "Filename",
-            "defaultValue": "meta.json",
+            "defaultValue": "$(Build.ArtifactStagingDirectory)/meta.json",
             "required": true,
             "groupName": "advanced",
-            "helpMarkDown": "The artifact filename"
+            "helpMarkDown": "The file path to save the variables too"
+        },
+        {
+            "name": "publishArtifact",
+            "type": "boolean",
+            "label": "Publish Artifact",
+            "defaultValue": "false",
+            "required": true,
+            "groupName": "advanced",
+            "helpMarkDown": "Publish the artifact to the build artifacts."
         },
         {
             "name": "artifactName",
@@ -38,7 +47,7 @@
             "defaultValue": "variables-{prefixes}",
             "required": true,
             "groupName": "advanced",
-            "helpMarkDown": "The artifact name. Use `{prefixes}` to be replaced with the prefixes that are being serialized"
+            "helpMarkDown": "The artifact name. Use `{prefixes}` to be replaced with the prefixes that are being serialized.  (only used it publishing artifacts is turned on)"
         },
         {
             "name": "prefixes",
