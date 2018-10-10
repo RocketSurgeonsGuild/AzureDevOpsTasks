@@ -2,15 +2,15 @@
     "$schema": "https://raw.githubusercontent.com/Microsoft/vsts-task-lib/master/tasks.schema.json",
     "id": "863cd897-a67e-4693-b55b-80589615c4fd",
     "name": "ExportServiceConnection",
-    "friendlyName": "Export a Service Connection as variables to the build",
-    "helpMarkDown": "",
+    "friendlyName": "Export Service Connection",
+    "helpMarkDown": "Export a Service Connection as variables to the build",
     "category": "Utility",
     "visibility": ["Build", "Release"],
     "author": "David Driscoll",
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 104
+        "Patch": 16
     },
     "instanceNameFormat": "Export Service Connection $(name)",
     "groups": [
