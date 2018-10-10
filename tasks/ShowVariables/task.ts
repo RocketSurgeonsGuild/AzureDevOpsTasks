@@ -1,4 +1,4 @@
-import { padStart, orderBy, padEnd } from 'lodash';
+import { orderBy, padEnd, padStart } from 'lodash';
 import { getVariable, getVariables } from 'vsts-task-lib/task';
 import { Task } from './util/Task';
 import { VariableHelper } from './util/VariableHelper';

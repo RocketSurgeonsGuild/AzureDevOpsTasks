@@ -30,6 +30,9 @@
             "path": "tasks/ShowVariables"
         },
         {
+            "path": "tasks/ExportServiceConnection"
+        },
+        {
             "path": "tasks/SerializeVariables"
         }
     ],
@@ -56,6 +59,14 @@
             "targets": ["ms.vss-distributed-task.tasks"],
             "properties": {
                 "name": "tasks/UniqueString"
+            }
+        },
+        {
+            "id": "ExportServiceConnection",
+            "type": "ms.vss-distributed-task.task",
+            "targets": ["ms.vss-distributed-task.tasks"],
+            "properties": {
+                "name": "tasks/ExportServiceConnection"
             }
         },
         {

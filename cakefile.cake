@@ -1,4 +1,4 @@
-#load "nuget:?package=Rocket.Surgery.Cake.Library&version=0.7.1";
+#load "nuget:?package=Rocket.Surgery.Cake.Library&version=0.8.1";
 #addin "nuget:?package=Cake.Npm&version=0.15.0";
 #addin Newtonsoft.Json
 using Newtonsoft.Json.Linq;

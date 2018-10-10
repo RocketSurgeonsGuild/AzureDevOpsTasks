@@ -17,6 +17,9 @@ Allows you to serialize variables to an artifact json file.
 ## Show Variables
 Lists all the variables present at the current state of your pipeline.
 
+## Export Service Connection
+Exports the given service connection as
+
 ## Unique String
 Resolves a unique string similar to how Azure ARM templates do, however it is not identical.  Outputs a hash with a size of 7 characters.
 * Inputs
