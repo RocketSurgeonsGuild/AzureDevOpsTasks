@@ -6,13 +6,14 @@ import {
     getVariable,
     setVariable,
 } from 'vsts-task-lib/task';
+import { each } from 'lodash';
 import { Task } from './util/Task';
 import { VariableHelper } from './util/VariableHelper';
 
 class ShowVariables extends Task {
     protected async run() {
         const endpointName = getPathInput('name', true);
-        const prefix = getInput('prefix', true);
+        const prefix = getInput('prefix', false) || endpointName;
 
         const endpointUrl = getEndpointUrl(endpointName, true);
         const endpointAuthorization = getEndpointAuthorization(endpointName, true);
@@ -29,11 +30,11 @@ class ShowVariables extends Task {
                 console.log(`${variableName}: ${endpointAuthorization.scheme}`);
             }
             if (endpointAuthorization.parameters) {
-                for (const [key, value] of Object.entries(endpointAuthorization.parameters)) {
+                each(endpointAuthorization.parameters, (value, key) => {
                     const variableName = `${prefix}.Authorization.${key}`;
                     setVariable(variableName, value, true);
                     console.log(`${variableName}: ${value}`);
-                }
+                });
             }
         }
     }

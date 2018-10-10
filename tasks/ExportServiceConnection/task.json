@@ -10,9 +10,9 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 16
+        "Patch": 17
     },
-    "instanceNameFormat": "Export Service Connection $(name)",
+    "instanceNameFormat": "Export Service Connection $(prefix)",
     "groups": [
         {
             "name": "advanced",
@@ -33,7 +33,7 @@
             "name": "prefix",
             "type": "string",
             "label": "Prefix",
-            "defaultValue": "$(name)",
+            "defaultValue": "",
             "required": true
         }
     ],
