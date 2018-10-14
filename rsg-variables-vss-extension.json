@@ -9,6 +9,8 @@
             "id": "Microsoft.VisualStudio.Services"
         }
     ],
+    "tags": ["variables", "serialize", "deserialize", "show variable", "service connection", "unique", "unique string"],
+    "galleryFlags": ["Public"],
     "description": "Helpers for serializing and deserializing variables between build, jobs, and releases.",
     "categories": ["Pipelines"],
     "icons": {
