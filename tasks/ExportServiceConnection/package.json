@@ -10,7 +10,6 @@
     },
     "dependencies": {
         "lodash": "^4.17.11",
-        "rxjs": "^6.2.2",
         "vsts-task-lib": "^2.6.0"
     },
     "jest": {
