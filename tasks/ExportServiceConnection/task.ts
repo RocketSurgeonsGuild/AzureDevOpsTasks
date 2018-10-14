@@ -1,3 +1,4 @@
+import { each } from 'lodash';
 import {
     getEndpointAuthorization,
     getEndpointUrl,
@@ -6,7 +7,6 @@ import {
     getVariable,
     setVariable,
 } from 'vsts-task-lib/task';
-import { each } from 'lodash';
 import { Task } from './util/Task';
 import { VariableHelper } from './util/VariableHelper';
 
