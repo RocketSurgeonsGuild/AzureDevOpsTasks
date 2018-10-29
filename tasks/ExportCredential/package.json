@@ -1,0 +1,29 @@
+{
+    "name": "exportcredential",
+    "main": "index.js",
+    "scripts": {
+        "precommit": "lint-staged",
+        "test": "jest"
+    },
+    "devDependencies": {
+        "@types/lodash": "^4.14.116"
+    },
+    "dependencies": {
+        "lodash": "^4.17.11",
+        "vsts-task-lib": "^2.6.0"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ]
+    }
+}
