@@ -10,7 +10,7 @@ import {
 import { Task } from './util/Task';
 import { VariableHelper } from './util/VariableHelper';
 
-class ExportServiceConnection extends Task {
+class ExportCredential extends Task {
     protected async run() {
         const endpointName = getPathInput('name', true);
         const prefix = getInput('prefix', false) || endpointName;
@@ -40,4 +40,4 @@ class ExportServiceConnection extends Task {
     }
 }
 
-new ExportServiceConnection(new VariableHelper(getVariable)).start();
+new ExportCredential(new VariableHelper(getVariable)).start();

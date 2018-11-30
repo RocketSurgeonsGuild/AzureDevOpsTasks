@@ -35,6 +35,9 @@
             "path": "tasks/ExportServiceConnection"
         },
         {
+            "path": "tasks/ExportCredential"
+        },
+        {
             "path": "tasks/SerializeVariables"
         }
     ],
@@ -69,6 +72,14 @@
             "targets": ["ms.vss-distributed-task.tasks"],
             "properties": {
                 "name": "tasks/ExportServiceConnection"
+            }
+        },
+        {
+            "id": "ExportCredential",
+            "type": "ms.vss-distributed-task.task",
+            "targets": ["ms.vss-distributed-task.tasks"],
+            "properties": {
+                "name": "tasks/ExportCredential"
             }
         },
         {
