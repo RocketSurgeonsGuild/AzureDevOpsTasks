@@ -11,5 +11,7 @@ export function uniqueString(seed: number | string, ...values: string[]) {
         seed = 1337;
     }
     const hash = murmurhash3js.x86.hash32(values.join(','), seed);
-    return base32(Buffer.from(hash.toString(16), 'hex'), 'Crockford').toLowerCase().padStart(7, '0');
+    return base32(Buffer.from(hash.toString(16), 'hex'), 'Crockford')
+        .toLowerCase()
+        .padStart(7, '0');
 }

@@ -13,7 +13,7 @@ describe('uniqueString', () => {
     it('should work with an array', () => {
         expect(uniqueString(123456789, ...['a', 'b', 'c', 'd'])).toBe('fy8j2kg');
     });
-    it('should work with known failing string', () =>{
+    it('should work with known failing string', () => {
         expect(uniqueString(`update-again.ReadySelect.Development`)).toBe('00d0nzm');
         expect(uniqueString(`update-again.ReadySelect.Development`.toLowerCase())).toBe('nrd6n3r');
     });
