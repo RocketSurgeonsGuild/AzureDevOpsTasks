@@ -13,8 +13,18 @@ describe('uniqueString', () => {
     it('should work with an array', () => {
         expect(uniqueString(123456789, ...['a', 'b', 'c', 'd'])).toBe('fy8j2kg');
     });
-    it('should work with known failing string', () => {
-        expect(uniqueString(`update-again.ReadySelect.Development`)).toBe('00d0nzm');
-        expect(uniqueString(`update-again.ReadySelect.Development`.toLowerCase())).toBe('nrd6n3r');
+    describe('known failing strings...', () => {
+        it('update-again', () => {
+            expect(uniqueString(`update-again.ReadySelect.Development`)).toBe('00d0nzm');
+            expect(uniqueString(`update-again.ReadySelect.Development`.toLowerCase())).toBe('nrd6n3r');
+        });
+        it('nuxt-ts', () => {
+            expect(uniqueString(`nuxt-ts. ReadySelect.Development.Linux`)).toBe('0023t44');
+            expect(uniqueString(`nuxt-ts. ReadySelect.Development.Linux`.toLowerCase())).toBe('7g1zbm0');
+        });
+        it('nuxt-ts2', () => {
+            expect(uniqueString(`nuxt-ts.ReadySelect.Development.Linux`)).toBe('d29vvmg');
+            expect(uniqueString(`nuxt-ts.ReadySelect.Development.Linux`.toLowerCase())).toBe('f4tx0jg');
+        });
     });
 });
