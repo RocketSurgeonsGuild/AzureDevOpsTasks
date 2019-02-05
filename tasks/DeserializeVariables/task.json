@@ -11,7 +11,7 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 30
+        "Patch": 32
     },
     "instanceNameFormat": "Deserialize Variables: $(jsonfiles)",
     "groups": [
