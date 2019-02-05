@@ -10,7 +10,7 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 32
+        "Patch": 34
     },
     "instanceNameFormat": "Export Credential $(prefix)",
     "groups": [

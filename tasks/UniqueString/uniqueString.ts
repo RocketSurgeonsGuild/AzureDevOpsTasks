@@ -11,12 +11,14 @@ export function uniqueString(seed: number | string, ...values: string[]) {
         seed = 1337;
     }
 
-    console.log("values: " + values.join(','));
+    console.log('values: ' + values.join(','));
     const hash = murmurhash3js.x86.hash32(values.join(','), seed);
-    console.log("hash: " + hash);
-    const hashStr = hash.toString(16);
-    console.log("hashStr: " + hashStr);
-    return base32(Buffer.from(hashStr, 'hex'), 'Crockford') //?
-        .toLowerCase() //?
-        .padStart(7, '0');
+    console.log('hash: ' + hash);
+    let hashStr = hash.toString(16);
+    hashStr = hashStr.padStart(Math.ceil(hashStr.length / 2) * 2, '0');
+    //Math.max(15/2)
+    console.log('hashStr: ' + hashStr);
+    let result = base32(Buffer.from(hashStr, 'hex'), 'Crockford').toLowerCase();
+    while (result.startsWith('0')) result = result.substring(1);
+    return result.padStart(7, '0') //?
 }
