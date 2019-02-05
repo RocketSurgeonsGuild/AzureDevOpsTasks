@@ -10,8 +10,13 @@ export function uniqueString(seed: number | string, ...values: string[]) {
         values = [seed, ...values];
         seed = 1337;
     }
+
+    console.log("values: " + values.join(','));
     const hash = murmurhash3js.x86.hash32(values.join(','), seed);
-    return base32(Buffer.from(hash.toString(16), 'hex'), 'Crockford') //?
+    console.log("hash: " + hash);
+    const hashStr = hash.toString(16);
+    console.log("hashStr: " + hashStr);
+    return base32(Buffer.from(hashStr, 'hex'), 'Crockford') //?
         .toLowerCase() //?
         .padStart(7, '0');
 }
