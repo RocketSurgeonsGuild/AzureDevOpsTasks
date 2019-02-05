@@ -22,10 +22,9 @@ if (!String.prototype.startsWith) {
         value: function(search: any, pos: any) {
             pos = !pos || pos < 0 ? 0 : +pos;
             return this.substring(pos, pos + search.length) === search;
-        }
+        },
     });
 }
-
 
 export function uniqueString(seed: number, ...values: string[]): string;
 export function uniqueString(...values: string[]): string;
