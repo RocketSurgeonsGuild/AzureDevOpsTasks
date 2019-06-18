@@ -21,12 +21,12 @@ phases:
       VstsArtifacts: '$(Artifacts)'
       system.enableAccessToken: 'true'
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 'true'
-      NuGetVersion: "4.6.2"
+      NuGetVersion: "5.1.0"
       NodeVersion: "10.x"
       ConnectedServiceName: 'RocketSurgeonsGuild Marketplace'
       VstsAccountId: 'rocketsurgeonsguild'
     steps:
-    - task: NuGetToolInstaller@0
+    - task: NuGetToolInstaller@1
       displayName: Install nuget $(NuGetVersion)
       inputs:
         versionSpec: $(NuGetVersion)
