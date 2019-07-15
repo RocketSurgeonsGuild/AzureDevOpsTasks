@@ -16,9 +16,7 @@ phases:
       Configuration: Release
       Verbosity: Normal
       Coverage: '$(Agent.BuildDirectory)/c'
-      VstsCoverage: '$(Coverage)'
       Artifacts: $(Build.ArtifactStagingDirectory)
-      VstsArtifacts: '$(Artifacts)'
       system.enableAccessToken: 'true'
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 'true'
       NuGetVersion: "5.1.0"
@@ -43,7 +41,7 @@ phases:
         verbosity: $(Verbosity)
         arguments: '-Configuration="$(Configuration)" -Artifacts="$(Artifacts)" -Coverage="$(Coverage)"'
       env:
-        System_AccessToken: $(System.AccessToken)
+        SYSTEM_ACCESSTOKEN: $(System.AccessToken)
 
     - task: ms-devlabs.vsts-developer-tools-build-tasks.publish-extension-build-task.PublishExtension@1
       displayName: Publish Extension
