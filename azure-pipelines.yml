@@ -19,7 +19,7 @@ phases:
       Artifacts: $(Build.ArtifactStagingDirectory)
       system.enableAccessToken: 'true'
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 'true'
-      NuGetVersion: "5.1.0"
+      NuGetVersion: "5.2.0"
       NodeVersion: "10.x"
       ConnectedServiceName: 'RocketSurgeonsGuild Marketplace'
       VstsAccountId: 'rocketsurgeonsguild'
