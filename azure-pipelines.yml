@@ -7,14 +7,12 @@ trigger:
   paths:
     exclude:
     - '**/*.md'
-    - .appveyor.yml
-    - .codecov.yml
+    - '**/*.yml'
+    - '**/*.yaml'
+    - .vscode/*
     - .git*
     - .editorconfig
     - .nuke
-    - GitReleaseManager.yaml
-    - .dependabot/config.yml
-    - .vscode/*
     - LICENSE
 
 pr:
@@ -33,7 +31,7 @@ phases:
       Artifacts: $(Build.ArtifactStagingDirectory)
       system.enableAccessToken: 'true'
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 'true'
-      NuGetVersion: "5.2.0"
+      NuGetVersion: "5.3.0"
       NodeVersion: "10.x"
       ConnectedServiceName: 'RocketSurgeonsGuild Marketplace'
       VstsAccountId: 'rocketsurgeonsguild'
