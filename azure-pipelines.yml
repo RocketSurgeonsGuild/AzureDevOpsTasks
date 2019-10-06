@@ -4,16 +4,6 @@ trigger:
     include:
       - master
       - refs/tags/*
-  paths:
-    exclude:
-    - '**/*.md'
-    - '**/*.yml'
-    - '**/*.yaml'
-    - .vscode/*
-    - .git*
-    - .editorconfig
-    - .nuke
-    - LICENSE
 
 pr:
   autoCancel: true
