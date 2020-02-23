@@ -21,3 +21,4 @@ issue-labels-exclude:
     - ':grey_question: question'
     - ':lock: wontfix'
     - ':family: duplicate'
+    - ':shipit: merge'
